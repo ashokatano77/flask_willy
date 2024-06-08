@@ -1,0 +1,103 @@
+ <!--inés de la cal perez-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e0f7fa; /* Fondo turquesa pastel */
+            color: #00796b; /* Texto azul */
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #004d40; /* Color azul oscuro */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        li {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #00796b; /* Color azul */
+            padding: 10px 15px;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #00796b;
+            color: white;
+        }
+        form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #00796b; /* Color azul */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004d40; /* Color azul oscuro */
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+        }
+        .container p {
+            text-align: justify;
+            color: #00796b; /* Color azul */
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú Principal</h1>
+    <ul>
+        <li><a href="{{ url_for('main.transaccion_salidas') }}">Transacción Salidas</a></li>
+        <li><a href="{{ url_for('main.view_fsa_salidas') }}">FSA Salidas</a></li>
+        <li><a href="{{ url_for('main.view_stock') }}">Stock</a></li>
+        <li><a href="{{ url_for('main.transaccion_entradas') }}">Transacción Entradas</a></li>
+        <li><a href="{{ url_for('main.view_fsa_entradas') }}">FSA Entradas</a></li>
+    </ul>
+    <form action="{{ url_for('main.logout') }}" method="POST">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+    <div class="container">
+        <img src="static/manzanos.jpg" alt="Descripción de la imagen">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec dictum metus. Morbi gravida, quam sit amet dapibus venenatis, lorem ipsum ultrices lorem, nec varius ligula est non velit. Fusce a orci id nunc efficitur condimentum. Mauris in felis eget dolor blandit fringilla non ut erat. Suspendisse potenti. Quisque vehicula urna at libero dignissim, ac bibendum leo ultrices. Sed ultricies nulla at fermentum cursus. Nunc tempor lectus nec ullamcorper varius. Integer maximus accumsan leo, ac efficitur eros feugiat non. Praesent non odio eget magna convallis pellentesque.
+        </p>
+        <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Donec id convallis nulla, ut consequat est. Integer viverra nisi non metus condimentum, ac hendrerit lectus interdum. Curabitur nec felis nec sem egestas volutpat. Aliquam erat volutpat. Sed vulputate arcu vitae urna feugiat, in dictum mauris iaculis. Aenean lacinia magna vel urna suscipit, non fermentum libero venenatis.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+ <!--inés de la cal perez-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Líneas FSA Salidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e0f7fa; /* Fondo turquesa pastel */
+            color: #00796b; /* Texto azul */
+        }
+        h1 {
+            margin-top: 20px;
+            color: #00796b;
+        }
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #b2ebf2; /* Fondo de encabezado en turquesa pastel */
+            color: #00796b; /* Texto azul */
+        }
+        tr:hover {
+            background-color: #b2dfdb; /* Color de fila en hover */
+        }
+        a {
+            text-decoration: none;
+            color: #00796b; /* Color azul */
+            padding: 10px 15px;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #00796b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Líneas FSA Salidas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Producto Comprado</th>
+                <th>Cantidad Producto</th>
+                <th>Precio por Unidad</th>
+                <th>Precio del Lote</th>
+                <th>ID FSA Salidas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linea in lineas %}
+            <tr>
+                <td>{{ linea.salida.user.username }}</td>
+                <td>{{ linea.producto.nombre }}</td>
+                <td>{{ linea.cantidad_producto }}</td>
+                <td>{{ linea.precio_por_unidad }}</td>
+                <td>{{ linea.cantidad_producto * linea.precio_por_unidad }}</td>
+                <td>{{ linea.fk_salida }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="{{ url_for('main.view_stock') }}">Stock</a>
+    <a href="{{ url_for('main.menu') }}">Menú Principal</a>
+    
+</body>
+</html>

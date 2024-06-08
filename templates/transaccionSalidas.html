@@ -1,0 +1,108 @@
+ <!--inés de la cal perez-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e0f7fa; /* Fondo turquesa pastel */
+            color: #00796b; /* Texto azul */
+        }
+        h2 {
+            margin-top: 20px;
+            color: #004d40; /* Color azul oscuro */
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #00796b; /* Texto azul */
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #00796b; /* Fondo azul */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40; /* Fondo azul oscuro al pasar el ratón */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        li {
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #00796b; /* Color azul */
+            padding: 10px 15px;
+            border: 1px solid #00796b; /* Borde azul */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #00796b; /* Fondo azul al pasar el ratón */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Pedido</h2>
+    <form method="POST" action="{{ url_for('main.procesar_pedido') }}">
+        <h1>Plátano</h1>
+        <label for="platano_cantidad">Cantidad:</label>
+        <input type="number" id="platano_cantidad" name="cantidad_platano" min="0" required>
+
+        <h1>Manzana</h1>
+        <label for="manzana_cantidad">Cantidad:</label>
+        <input type="number" id="manzana_cantidad" name="cantidad_manzana" min="0" required>
+
+        <h1>Pera</h1>
+        <label for="pera_cantidad">Cantidad:</label>
+        <input type="number" id="pera_cantidad" name="cantidad_pera" min="0" required>
+
+        <input type="submit" value="Enviar Pedido">
+    </form>
+
+    <a href="{{ url_for('main.view_stock') }}">Stock</a>
+    <a href="{{ url_for('main.menu') }}">Menú Principal</a>
+</body>
+</html>
