@@ -34,4 +34,4 @@ app.register_blueprint(main)
 
 # Ejecutar el servidor solo si este archivo se ejecuta directamente
 if __name__ == '__main__':
-    app.run(debug=True)
+    a

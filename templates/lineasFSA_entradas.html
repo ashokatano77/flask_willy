@@ -34,4 +34,56 @@
         }
         th {
             background-color: #b2ebf2; /* Fondo de encabezado en turquesa pastel */
+            color: #00796b; /* Texto azul */
+        }
+        tr:hover {
+            background-color: #b2dfdb; /* Color de fila en hover */
+        }
+        a {
+            text-decoration: none;
+            color: #00796b; /* Color azul */
+            padding: 10px 15px;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #00796b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Líneas FSA Entradas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Producto Comprado</th>
+                <th>Cantidad Producto</th>
+                <th>Precio por Unidad</th>
+                <th>Precio del Lote</th>
+                <th>ID FSA Entradas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linea in lineas %}
+            <tr>
+                <td>{{ linea.entrada.user.username }}</td>
+                <td>{{ linea.producto.nombre }}</td>
+                <td>{{ linea.cantidad_producto }}</td>
+                <td>{{ linea.precio_por_unidad }}</td>
+                <td>{{ linea.cantidad_producto * linea.precio_por_unidad }}</td>
+                <td>{{ linea.fk_entrada }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     
+    <a href="{{ url_for('main.view_stock') }}">Stock</a>
+    <a href="{{ url_for('main.menu') }}">Menú Principal</a>
+
    
+
+</body>
+</html>

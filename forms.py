@@ -26,4 +26,4 @@ class RegisterForm(FlaskForm):
 
 
  #aqui tenemos los formularios, el de login y el de registro
- # todo:los formularios de factura y albaran irán aqui 
+ # todo:los formularios de factu
