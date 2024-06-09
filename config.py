@@ -18,4 +18,4 @@ class DevConfig(Config):
 
 #notas tomadas en clase ------>
 #fichero de configuracion, tiene que haber: clave secreta para los formularios y la ruta hacia la base de datos
-    #la base de datos es sqlite, se maneja desde el visu
+    #la base de datos es sqlite, se maneja desde el visual no desde el worbrench

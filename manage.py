@@ -13,4 +13,7 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 
 # Agrega el comando 'db' para gestionar las migraciones, aunque no las he implementado
-manager.add_command('db', Migrate
+manager.add_command('db', MigrateCommand)
+
+if __name__ == '__main__':
+    manager.run()
